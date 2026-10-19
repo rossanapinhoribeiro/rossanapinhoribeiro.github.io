@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rossana Pinho Ribeiro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rossana Pinho Ribeiro — visual artist, scenographer, architect and art educator based in Porto. Site-responsive work on ecology, territory and the common.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: a field notebook — an index of works like a specimen register; each work pairs a sticky text column (as in the printed portfolio) with an image field. */
+:root{
+  --paper:#ffffff; --ink:#141414; --muted:#6b6b66; --rule:#e2e2de; --moss:#4f5d32; --tile:#f2f2ef; color-scheme:light;
+  --display:"Jost","Gill Sans","Gill Sans MT",Futura,system-ui,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gut:max(16px,env(safe-area-inset-left,0px));
+}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1320px;margin:0 auto}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:300;letter-spacing:.01em;text-wrap:balance;margin:0}
+p{margin:0}
+em{font-style:italic}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding-block:14px;border-bottom:1px solid var(--rule);font-family:var(--display);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.bar nav{display:flex;gap:20px;flex-wrap:wrap}
+.bar a{text-decoration:none;color:var(--muted)} .bar a:hover{color:var(--ink)}
+.bar .me{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,64px);padding-block:clamp(32px,6vw,80px) clamp(40px,6vw,72px);align-items:end}
+.hero h1{font-size:clamp(3rem,9.5vw,8.5rem);line-height:.88;text-transform:uppercase;font-weight:300;letter-spacing:-.01em}
+.hero h1 span{display:block}
+.hero .role{font-family:var(--display);font-size:clamp(1rem,1.4vw,1.2rem);letter-spacing:.06em;margin-top:28px;color:var(--muted)}
+.hero .lede{max-width:34em;margin-top:20px}
+.hero figure{margin:0;position:relative}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.hero figcaption{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:8px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* index */
+.label{font-family:var(--display);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.index{border-top:1px solid var(--ink);padding-block:16px 48px}
+.index ol{list-style:none;margin:10px 0 0;padding:0}
+.index li a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding-block:6px;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding .25s ease,color .25s ease}
+.index .y{font-family:var(--mono);font-size:.78rem;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.index .t{font-family:var(--display);font-size:clamp(.95rem,1.2vw,1.1rem);font-weight:400;line-height:1.3;letter-spacing:.02em}
+.index li a:hover{padding-left:6px;color:var(--moss)}
+@media (prefers-reduced-motion: reduce){.index li a{transition:none}}
+
+/* works */
+.work{border-top:1px solid var(--ink);padding-block:28px 72px;scroll-margin-top:56px}
+.whead{display:grid;gap:10px;margin-bottom:32px}
+.kicker{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.kicker span:first-child{color:var(--moss)}
+.work h2{font-size:clamp(2.1rem,5.4vw,4.4rem);line-height:1;text-transform:uppercase}
+.where{color:var(--muted);display:flex;gap:6px 18px;flex-wrap:wrap}
+.duo{font-family:var(--display);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--moss);align-self:center}
+.wbody,.part{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:start}
+.txt{display:grid;gap:1em;max-width:36em;position:sticky;top:76px}
+.txt h3{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.1}
+.meta,.credits{list-style:none;margin:.4em 0 0;padding:0;font-size:.85rem;color:var(--muted);display:grid;gap:3px}
+.meta{font-family:var(--mono);font-size:.76rem;color:var(--ink)}
+.credits{border-top:1px solid var(--rule);padding-top:12px}
+.vid{font-family:var(--display);font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moss);justify-self:start;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:2px}
+.field{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,auto));justify-content:start;gap:4px 22px;font-family:var(--mono);font-size:.74rem;border-block:1px solid var(--rule);padding-block:10px}
+.field dt{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:.66rem}
+.field dd{margin:0}
+.imgs{display:grid;gap:10px;min-width:0}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gal.dense{grid-template-columns:repeat(4,minmax(0,1fr))}
+.ph{all:unset;cursor:zoom-in;display:block;position:relative;background:var(--tile);overflow:hidden;max-width:100%}
+.ph .count{position:absolute;left:14px;bottom:12px;color:#fff;font-family:var(--display);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;text-shadow:0 0 10px rgb(0 0 0 / .55),0 1px 2px rgb(0 0 0 / .35)}
+.en{font-family:var(--display);font-size:1rem;letter-spacing:.06em;color:var(--muted)}
+.quote{display:block;font-style:italic;color:var(--muted);border-left:1px solid var(--rule);padding-left:14px}
+.ph img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s ease}
+.ph:hover img{transform:scale(1.025)}
+@media (prefers-reduced-motion: reduce){.ph img{transition:none}.ph:hover img{transform:none}}
+.parts{display:grid;gap:64px;margin-top:64px}
+.part{padding-top:28px;border-top:1px dashed var(--rule)}
+
+/* about + cv */
+.about{border-top:1px solid var(--ink);padding-block:28px 72px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);scroll-margin-top:56px}
+.about img{width:100%;max-width:420px;aspect-ratio:1/1;object-fit:cover;display:block}
+.about .bio{display:grid;gap:1em;max-width:38em}
+.about h2,.cv h2{font-size:clamp(2.1rem,5.4vw,4.4rem);text-transform:uppercase;line-height:1;margin-bottom:12px}
+.cv{border-top:1px solid var(--ink);padding-block:28px 80px;scroll-margin-top:56px}
+.cvgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 48px;margin-top:28px}
+.cvgrid section{min-width:0}
+.cvgrid h3{font-family:var(--display);font-size:.8rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid var(--rule);margin-bottom:10px}
+.cvgrid h4{font-family:var(--display);font-weight:400;font-size:.95rem;margin:16px 0 6px;color:var(--moss)}
+.cvgrid ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:.88rem;line-height:1.45}
+.cvgrid li{display:grid;grid-template-columns:4.2rem minmax(0,1fr);gap:8px}
+.cvgrid li b{font-family:var(--mono);font-weight:400;font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:1px}
+.foot{border-top:1px solid var(--ink);padding-block:22px 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:var(--display);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:20;background:rgb(255 255 255 / .78);-webkit-backdrop-filter:blur(18px) saturate(.6);backdrop-filter:blur(18px) saturate(.6);display:flex;align-items:center;justify-content:center;
+  padding:calc(48px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;cursor:pointer}
+.lb .pv,.lb .nx{font-size:1.6rem;padding:16px}
+@media (min-width:700px){.lb{padding-left:max(72px,env(safe-area-inset-left,0px));padding-right:max(72px,env(safe-area-inset-right,0px))}}
+.lb button{all:unset;cursor:pointer;position:absolute;font-family:var(--display);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);padding:10px}
+.lb .x{top:calc(8px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
+.lb .pv{left:max(8px,env(safe-area-inset-left,0px));top:50%}
+.lb .nx{right:max(8px,env(safe-area-inset-right,0px));top:50%}
+.lb .cap{position:absolute;left:max(16px,env(safe-area-inset-left,0px));top:calc(14px + env(safe-area-inset-top,0px));font-family:var(--display);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;gap:14px}
+.lb .cap b{font-weight:400;color:var(--ink)}
+
+@media (max-width:860px){
+  .hero,.wbody,.part,.about{grid-template-columns:minmax(0,1fr)}
+  .txt{position:static}
+  .cvgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  }
+@media (max-width:560px){
+  .bar nav{gap:14px}
+  .bar .me{display:none}
+  .gal,.gal.dense{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cvgrid{grid-template-columns:minmax(0,1fr)}
+  .field{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="bar">
+  <a class="me" href="#top">Rossana Pinho Ribeiro</a>
+  <nav aria-label="Sections"><a href="#works">Works</a><a href="#about">About</a><a href="https://suspeito.github.io" target="_blank" rel="noopener">Colectivo Suspeito ↗</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <h1><span>Rossana</span><span>Pinho</span><span>Ribeiro</span></h1>
+    <p class="role">Visual artist, scenographer, architect and art educator · Porto</p>
+    <p class="lede">Site-responsive work at the edge of ecology, territory and the common: collecting a forest floor, replanting a footpath, staging the city as it is being built.</p>
+  </div>
+  <figure>
+    <img src="img/004-002.jpg" alt="Leaf litter laid on a tiled gallery floor in the pattern of a historic hydraulic tile">
+    <figcaption><span>18 m² of Forest Floor, 2025</span><span>Cardedeu · 41°38’28.8”N 2°20’49.8”E</span></figcaption>
+  </figure>
+</section>
+
+<section class="index" id="works" aria-labelledby="idx">
+  <h2 class="label" id="idx">Selected works</h2>
+  <ol>
+<li><a href="#corpus-translatum"><span class="t">Corpus Translatum</span><span class="y">2025</span></a></li>
+<li><a href="#sometimes-the-path"><span class="t">Sometimes the path is not the path anymore</span><span class="y">2025</span></a></li>
+<li><a href="#displacement"><span class="t">Displacement</span><span class="y">2024</span></a></li>
+<li><a href="#textures-of-the-transparency"><span class="t">Textures of the Transparency</span><span class="y">2024</span></a></li>
+<li><a href="#o-horizonte-livre-provavelmente"><span class="t">O Horizonte Livre, Provavelmente</span><span class="y">2024</span></a></li>
+<li><a href="#of-the-99"><span class="t">Of the 99%, by the 99%, for the 99%</span><span class="y">2024</span></a></li>
+<li><a href="#analog-glitch"><span class="t">Analog Glitch</span><span class="y">2024</span></a></li>
+<li><a href="#toxicity"><span class="t">Toxicity</span><span class="y">2023</span></a></li>
+<li><a href="#carta-de-desmotivacao"><span class="t">Carta de (DES)motivação</span><span class="y">2023</span></a></li>
+<li><a href="#radical-tenderness"><span class="t">Radical Tenderness</span><span class="y">2022</span></a></li>
+<li><a href="#the-impossible-cities"><span class="t">The Impossible Cities</span><span class="y">2021</span></a></li>
+<li><a href="#a-valvula"><span class="t">A Válvula</span><span class="y">2021</span></a></li>
+<li><a href="#memorial"><span class="t">Memorial</span><span class="y">2020</span></a></li>
+<li><a href="#spectrum"><span class="t">Spectrum</span><span class="y">2020</span></a></li>
+<li><a href="#a-study-on-resilience"><span class="t">A Study on Resilience</span><span class="y">2019</span></a></li>
+  </ol>
+</section>
+
+<section class="work" id="corpus-translatum">
+  <header class="whead">
+    <p class="kicker"><span>2025</span><span>Artistic residency, workshop, exhibition</span></p>
+    <h2>Corpus Translatum</h2>
+    <p class="where">Fàbrica Tèxtil Rase, Cardedeu, Spain<span class="duo">with Zaida Guerrero Casado</span></p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>This research work aims to be an anthropological tale, a reflection on the ways in which human beings inhabit the world and act upon nature, a mirror of our Western culture. It is a story of a society in which rationality is imposed over instinct, control and dominance over wild nature, and taxonomy over the magical dimension. A story where control is equated with knowledge, and where knowledge becomes a social imperative to order and give meaning to the world.</p><p>We set out to dissect three territories: 18 square meters of forest, 18 square meters of fallow land with spontaneous flora, and an abandoned field full of dry thistle flowers. The 18 square meters correspond to the same dimensions by which the gallery floor is divided. These fragments of landscape were displaced as we brought the collected material into the interior space of the Fàbrica de Cultura Tèxtil Rase. In the exhibition, we retell those natural spaces through different lenses, creating a new language that fuses the subtle and sensitive world with the rationality of science. This work intends to be a poetic exercise built from the formal exploration of how natural matter can be read and translated. In this way, we initiate a process of denaturalization, granting the subject a discursive quality through which it can reflect upon its own identity.</p><p><em>Is translation, a shift in language, capable of preserving the essence of a message and the subject of study? And beyond analysis, can scientific language rediscover the poetics of the world?</em></p>
+      
+      <ul class="credits"><li>Rossana Pinho Ribeiro + Zaida Guerrero Casado</li><li>Artistic residency with exhibition at Fàbrica Tèxtil Rase, Cardedeu, Spain</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/002-000.jpg&quot;]" data-title="Corpus Translatum" aria-label="Open images: Corpus Translatum"><img src="img/002-000.jpg" alt="Corpus Translatum" loading="lazy" decoding="async"></button></div>
+  </div>
+  <div class="parts"><article class="part">
+  <div class="txt">
+    <h3>18 m² of Forest Floor</h3>
+    <dl class="field"><div><dt>Collected</dt><dd>13.08.2025</dd></div><div><dt>Site</dt><dd>41°38’28.8”N 2°20’49.8”E</dd></div><div><dt>Material</dt><dd>18 m² leaf-litter</dd></div></dl>
+    <p>This site-specific installation merges two grounds: the natural forest floor of Cardedeu and the hydraulic tile pattern typical of the region, found in the Tomàs Balvey Museum.</p><p>On August 13, 2025, the entire leaf-litter layer of an 18 m² forest section was collected. The organic matter was then sorted and transformed to recreate the colors and motifs of the museum’s historic pavement.</p><p>Nature’s stratified memory and human ornamental tradition collapse into one shared surface, a hybrid territory where decay and design coexist.</p>
+  </div>
+  <div class="imgs"><button class="ph" data-set="[&quot;img/003-001.jpg&quot;, &quot;img/004-002.jpg&quot;, &quot;img/004-003.jpg&quot;, &quot;img/004-004.jpg&quot;]" data-title="18 m² of Forest Floor" aria-label="Open images: 18 m² of Forest Floor"><img src="img/003-001.jpg" alt="18 m² of Forest Floor" loading="lazy" decoding="async"><span class="count">4 images</span></button></div>
+</article><article class="part">
+  <div class="txt">
+    <h3>18 m² of Fallow Land</h3>
+    <dl class="field"><div><dt>Collected</dt><dd>20.08.2025</dd></div><div><dt>Site</dt><dd>41°38’52.0”N 2°21’41.6”E</dd></div><div><dt>Material</dt><dd>1,307 flowers · various species</dd></div></dl>
+    <p>This installation captures and preserves a blooming field in Cardedeu on August 20th, 2025. Within an 18 m² area, 1,307 flowers were collected, classified, and conserved. The field’s spontaneous flora reemerges in a new context. Placed along the joints of the gallery floor, the flowers rise as if sprouting from the cracks of this former industrial building, gently reclaiming its rigid architecture.</p><p>The work forms a visual cartography, a poetic diagram that reflects the real and proportional presence of each species in the original landscape. A recording of cicadas plays through an upright piano, infusing the room with the memory of that summer day.</p><a class="vid" href="https://youtu.be/tbi0-_3fBdI" target="_blank" rel="noopener">Watch the video ↗</a>
+  </div>
+  <div class="imgs"><button class="ph" data-set="[&quot;img/005-005.jpg&quot;, &quot;img/006-006.jpg&quot;, &quot;img/006-007.jpg&quot;, &quot;img/006-008.jpg&quot;]" data-title="18 m² of Fallow Land" aria-label="Open images: 18 m² of Fallow Land"><img src="img/005-005.jpg" alt="18 m² of Fallow Land" loading="lazy" decoding="async"><span class="count">4 images</span></button></div>
+</article><article class="part">
+  <div class="txt">
+    <h3>4 Meters of Thistle Flowers</h3>
+    <dl class="field"><div><dt>Collected</dt><dd>21.08.2025</dd></div><div><dt>Site</dt><dd>41°38’59.4”N 2°21’43.8”E</dd></div><div><dt>Material</dt><dd>4 m of thistle flowers</dd></div></dl>
+    <p>Collected on August 21, 2025 in a field in Cardedeu, the thistles are presented in two states: one half dry and spiked at the end of their life cycle; the other peeled, revealing a tender, vulnerable core.</p><p>Installed between two gallery walls in two parallel lines, the thistles form a threshold the viewer is invited to cross, evoking the spirit of Ulay and Abramović’s “Imponderabilia”. Here, however, the “bodies” are two states of the same natural element. The visitor must choose which side to face: one row threatens to wound and the other risks being wounded. Walking between them becomes a negotiation between harm and care.</p>
+  </div>
+  <div class="imgs"><button class="ph" data-set="[&quot;img/007-009.jpg&quot;, &quot;img/008-010.jpg&quot;, &quot;img/008-011.jpg&quot;, &quot;img/008-012.jpg&quot;]" data-title="4 Meters of Thistle Flowers" aria-label="Open images: 4 Meters of Thistle Flowers"><img src="img/007-009.jpg" alt="4 Meters of Thistle Flowers" loading="lazy" decoding="async"><span class="count">4 images</span></button></div>
+</article></div>
+</section>
+<section class="work" id="sometimes-the-path">
+  <header class="whead">
+    <p class="kicker"><span>2025</span><span>Land art · Art i Gavarres Festival</span></p>
+    <h2>Sometimes the path is not the path anymore</h2>
+    <p class="where">Feixa sobre la mina del Calvari, Girona, Spain<span class="duo">with Zaida Guerrero Casado</span></p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>A path is the physical, visible territory that emerges from the act of walking. It is a space of transit, an anthropological map that reveals human movement, our need for connection and efficiency.</p><p>In the heart of a semi-natural landscape, a subtle desire path marked a route traced by walkers through a mechanical and often unconscious repetition. Our intervention sought to invert the function of this ground, transforming this most-trodden trail back into fertile soil. By planting flora native to the surrounding area back into the fine line of the human path, we simultaneously revealed and erased the route’s former existence.</p><p>While the path had once served as a means of passage and connection, it now became a fertile border, bifurcating the strip and changing how the space could be navigated. Visitors are inevitably forced to choose new directions and invent new paths.</p>
+      <ul class="meta"><li>Local plants, soil</li><li>20 cm × 38 m</li></ul>
+      <ul class="credits"><li>Rossana Pinho Ribeiro + Zaida Guerrero Casado</li><li>Art i Gavarres Festival, Girona, Spain</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/009-013.jpg&quot;, &quot;img/010-014.jpg&quot;, &quot;img/010-015.jpg&quot;, &quot;img/010-016.jpg&quot;, &quot;img/010-017.jpg&quot;, &quot;img/011-018.jpg&quot;, &quot;img/011-019.jpg&quot;, &quot;img/011-020.jpg&quot;]" data-title="Sometimes the path is not the path anymore" aria-label="Open images: Sometimes the path is not the path anymore"><img src="img/009-013.jpg" alt="Sometimes the path is not the path anymore" loading="lazy" decoding="async"><span class="count">8 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="displacement">
+  <header class="whead">
+    <p class="kicker"><span>2024</span><span>Land art · Hilari(um) Festival</span></p>
+    <h2>Displacement</h2>
+    <p class="where">Hermitage of Sant Hilari, Cardedeu, Spain<span class="duo">with Zaida Guerrero Casado</span></p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>Five pieces of soil and their respective flora, each one measuring 1 square meter, are mutually interchanged. These five pieces are transformed into a total of six, with one of the excavations left empty, and one of the pieces moved inside a chapel.</p><p>While some of the squares stand out from their surroundings, almost like islands, others blend in perfectly, making it very difficult to notice them as a recently added part of the site.</p><p>This work aims to reflect on what happens when a unit, an individual, a social group, or an ecosystem is alienated from its original environment.</p><p><em>What changes does an object or subject undergo when subjected to a migratory process? What are the narratives and experiences of gain and loss? What is the effort required for adaptation and acculturation? What are its possibilities of thriving and/or surviving?</em></p><p>These questions are fundamental to any interpersonal, social, political, and cultural relationship, but they are also increasingly relevant in the current context of climate emergency.</p>
+      <ul class="meta"><li>Soil</li><li>1 m² × 6</li></ul>
+      <ul class="credits"><li>Rossana Pinho Ribeiro + Zaida Guerrero Casado</li><li>Hilari(um) Festival, Cardedeu, Spain</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/012-021.jpg&quot;, &quot;img/013-022.jpg&quot;, &quot;img/013-023.jpg&quot;, &quot;img/013-024.jpg&quot;, &quot;img/013-025.jpg&quot;, &quot;img/014-026.jpg&quot;, &quot;img/014-027.jpg&quot;, &quot;img/014-028.jpg&quot;]" data-title="Displacement" aria-label="Open images: Displacement"><img src="img/012-021.jpg" alt="Displacement" loading="lazy" decoding="async"><span class="count">8 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="textures-of-the-transparency">
+  <header class="whead">
+    <p class="kicker"><span>2024</span><span>Installation · Bienal de Artes Plásticas de Coruche</span></p>
+    <h2>Textures of the Transparency</h2>
+    <p class="where">Coruche, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>In this project, I set out to explore and demonstrate the importance of the Sorraia River to the Coruche region through a visual object that would display the different colors and textures of the water.</p><p>Once on-site, I realized that the Sorraia is, in fact, only one part of a larger irrigation system composed of various elements that work together to supply and nurture the fertile local agricultural economy, whose significance extends across the entire nation and even beyond borders.</p><p>I collected and processed various local materials of biological and geological origin to create an object that presents them as a system in which, through the effects of time and gravity, they mix and transform each other.</p><p>This resulted in a device whose setup may resemble a scientific laboratory but is actually more of an alchemical experiment.</p><p>This device, which explores, displays, and records the interdependent relationships between various materials that make up Coruche, simultaneously constructs an unpredictable painting, composed of the liquids resulting from the mixtures of the collected materials and created through the forces of physics and chemistry.</p>
+      <ul class="meta"><li>Glass wine bottles, biological and geological materials, water, metal structure, hardware, lights, paper</li></ul>
+      <ul class="credits"><li>Rossana Pinho Ribeiro</li><li>Curators: André Banha and Carmo Moser</li><li>Bienal de Artes Plásticas de Coruche, Portugal</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/015-029.jpg&quot;, &quot;img/016-030.jpg&quot;, &quot;img/016-031.jpg&quot;, &quot;img/016-032.jpg&quot;, &quot;img/017-033.jpg&quot;, &quot;img/017-034.jpg&quot;, &quot;img/017-035.jpg&quot;]" data-title="Textures of the Transparency" aria-label="Open images: Textures of the Transparency"><img src="img/015-029.jpg" alt="Textures of the Transparency" loading="lazy" decoding="async"><span class="count">7 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="o-horizonte-livre-provavelmente">
+  <header class="whead">
+    <p class="kicker"><span>2024</span><span>Scenography · OSCILA 1</span></p>
+    <h2>O Horizonte Livre, Provavelmente</h2><p class="en">The Free Horizon, Probably</p>
+    <p class="where">SOCORRO, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>Scenography designed to accompany the concerts of Vítor Rua, Francisca Vieira Campos and umgrandefilhodamae at OSCILA 1, a session programmed by Ariana Simões at SOCORRO.</p><p>The title refers to the European Portuguese title of Elia Suleiman’s film <em>It Must Be Heaven</em>: “O Paraíso, Provavelmente” (Paradise, Probably).</p><p>The form draws a more universal landscape: a horizon line like the one that bounds half of Portugal, and also like the one that bounds the freest border of the Gaza Strip, the water. A black sky and a crystalline sea, where the moon shines, and the stars, and the Israeli comets.</p><p>A sea horizon is the hinge of a mirror. The line that joins and separates air and water is only a visual border.</p><p>So much sea on this Earth, and whether in Portugal or in what still remains of Palestine, if we look closely we see that not even what we call ours is wholly ours.</p><p>Air and sea belong to everyone, yet so few hold control over these essential goods.</p><p>This is what the world is made of: hinges and borders, measured and mediated minute by minute. And of struggles, visible and invisible, fought at every instant, that make every horizon line oscillate, even the improbable ones.</p>
+      
+      <ul class="credits"><li>Scenography: Rossana Pinho Ribeiro</li><li>Photography: Pedro Moura and Rossana Pinho Ribeiro</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-005-000.jpg&quot;, &quot;img/pt-006-001.jpg&quot;, &quot;img/pt-006-002.jpg&quot;, &quot;img/pt-007-003.jpg&quot;, &quot;img/pt-007-004.jpg&quot;, &quot;img/pt-007-005.jpg&quot;, &quot;img/pt-007-006.jpg&quot;]" data-title="O Horizonte Livre, Provavelmente" aria-label="Open images: O Horizonte Livre, Provavelmente"><img src="img/pt-005-000.jpg" alt="O Horizonte Livre, Provavelmente" loading="lazy" decoding="async"><span class="count">7 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="of-the-99">
+  <header class="whead">
+    <p class="kicker"><span>2024</span><span>Scenography · OSCILA 2</span></p>
+    <h2>Of the 99%, by the 99%, for the 99%</h2>
+    <p class="where">SOCORRO, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>Scenography designed to accompany the concerts of Amuleto Apotropaico and Felix-Florian Tödtloff at OSCILA 2, a session programmed by Ariana Simões at SOCORRO.</p><p>The title refers to Joseph E. Stiglitz’s <em>Vanity Fair</em> article “Of the 1%, by the 1%, for the 1%”, which gave rise to the slogan ‘We are the 99%’, carried around the world by the Occupy Wall Street movement in 2011.</p><p>In the article, Stiglitz offers clues to a world imagined from the common interest: made by the 99%, from the needs of the 99%, for the 99%. He also argues that the 1%, needing no government to guarantee anything (since they can buy it at any price), drift away from the rest of the population and lose all empathy for it.</p><p>This 1% becomes absent, apparently by choice. And yet it is this 1% that writes the rules of the global economy.</p>
+      
+      <ul class="credits"><li>Scenography: Rossana Pinho Ribeiro</li><li>Photography: Pedro Moura and Rossana Pinho Ribeiro</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-008-007.jpg&quot;, &quot;img/pt-009-008.jpg&quot;, &quot;img/pt-009-009.jpg&quot;]" data-title="Of the 99%, by the 99%, for the 99%" aria-label="Open images: Of the 99%, by the 99%, for the 99%"><img src="img/pt-008-007.jpg" alt="Of the 99%, by the 99%, for the 99%" loading="lazy" decoding="async"><span class="count">3 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="analog-glitch">
+  <header class="whead">
+    <p class="kicker"><span>2024</span><span>Scenography · OSCILA 3</span></p>
+    <h2>Analog Glitch</h2>
+    <p class="where">SOCORRO, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>Scenography designed to accompany the real-time projection by 13A and the concerts of Emil Saiz, Zarya and Vile Karimi at OSCILA 3, a session programmed by Ariana Simões at SOCORRO.</p><p><em>Analog Glitch</em> happens in the contrast of definition. A distortion that submerges us and brings us back to the surface, through landscapes animated in real time.</p>
+      
+      <ul class="credits"><li>Scenography: Rossana Pinho Ribeiro</li><li>Projection: 13A</li><li>Photography: Pedro Moura and Rossana Pinho Ribeiro</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-010-010.jpg&quot;, &quot;img/pt-011-011.jpg&quot;, &quot;img/pt-011-012.jpg&quot;]" data-title="Analog Glitch" aria-label="Open images: Analog Glitch"><img src="img/pt-010-010.jpg" alt="Analog Glitch" loading="lazy" decoding="async"><span class="count">3 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="toxicity">
+  <header class="whead">
+    <p class="kicker"><span>2023</span><span>Scenographic video installation</span></p>
+    <h2>Toxicity</h2>
+    <p class="where">Rua das Gaivotas, Lisbon · SOCORRO, Porto</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p><em>Toxicity</em> is a scenographic video installation that accompanies the launch concerts of <em>Vandoma</em>, the album by Ricardo Nogueira Fernandes.</p><p><span class="quote">“Vandoma is fog, is rain, is white light, is granite. Vandoma is Portugal, is France, is England. Vandoma is the beaches of Gaia, the Valongo hills, Cabo do Mundo, Fontaínhas. Vandoma is a patron saint. Vandoma is 14 tracks evoking the genius loci of 13 places in Porto, in their spatial, emotional and social dimension. Each track spoke with the place it was meant for. Each was played there, and the encounter between music and place was recorded. Vandoma is noisy ambient, like Porto.” — Ricardo Nogueira Fernandes</span></p><p>As a scenographic device, <em>Toxicity</em> is a transparent panel combining many shades of green, an allusion to the window frames of the city’s traditional architecture. The greens, mostly acid, suggest a saturated, unhealthy atmosphere. The panel both catches the video projection and lets it fall onto the back wall. Either way, it always acts as a filter that disturbs and alters how the video is seen.</p><p>The video is made entirely of clips taken from Google Maps, uploaded by the platform’s own users, each linked by location to the places represented on the album.</p><p>Built from material already available online, the work is also a documentary record of contemporary Porto, filmed by those who live, work and above all visit the city, yet critically composed and edited by me. Through the repetition of simultaneous moving images, the video takes on an apparent psychedelia, like a probable intoxication, or a collective hallucination.</p><p><em>Vandoma</em> and <em>Toxicity</em> premiered in March 2023 at Rua das Gaivotas (Lisbon) and were presented in July at SOCORRO (Porto).</p>
+      <ul class="meta"><li>Video installation, 50′</li></ul>
+      <ul class="credits"><li>Installation and video editing: Rossana Pinho Ribeiro</li><li>Music: Ricardo Nogueira Fernandes</li><li>Photography: Pedro Jafuno</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-014-016.jpg&quot;, &quot;img/pt-015-017.jpg&quot;, &quot;img/pt-015-018.jpg&quot;]" data-title="Toxicity" aria-label="Open images: Toxicity"><img src="img/pt-014-016.jpg" alt="Toxicity" loading="lazy" decoding="async"><span class="count">3 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="carta-de-desmotivacao">
+  <header class="whead">
+    <p class="kicker"><span>2023</span><span>Theatre · scenography, dramaturgy, video</span></p>
+    <h2>Carta de (DES)motivação</h2><p class="en">(De)motivation Letter</p>
+    <p class="where">mala voadora, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>The idea: to create an artistic object out of letters that were rejected. A performance born from the force of undone motivations.</p><p>Starting from an actor’s working life, it speaks of the labour question of our time: the duty to be motivated, enthusiastic, to live for work. To be an “entrepreneur of oneself”, as Foucault puts it, not only as a young start-up founder but also, and above all, when working sporadically, without a contract, as a freelancer. Competition for a mediocre wage is fierce, and there is no room for procrastination naps or panic attacks. Theatre does not escape neoliberal logic, so despite the slightly autobiographical tone of the project, any millennial or zoomer will recognise the sense of failure when a job application goes unanswered.</p><p>We are freely submissive to our own constant optimisation, exploiting ourselves in search of the mere pre-possibility of a job. And when we burn out, there is no sick leave, so the answer is to learn meditation and read books that teach us how to be happy. We have willingly built the age of psychopolitics, mending our emotional insides with rags of patched-up feelings. Through texts written for each cover letter, self-tapes for auditions and motivational videos, the performance questions the obligation to feel ultra-motivated in order to work.</p><p>Following the author’s previous show, <em>A Válvula</em>, the project keeps dwelling on the apparent meaninglessness of contemporary life, above all where work is concerned. This time the weight falls on the text: biting irony, a hunt for clichés and commonplaces, kitsch and bursts of hysteria, all converging to translate the collective hallucination we live in, where working to live means living to work.</p>
+      <ul class="meta"><li>Theatre play, 50′</li></ul>
+      <ul class="credits"><li>Creation, text and performance: João Delgado Lourenço</li><li>Dramaturgy: João Delgado Lourenço and Rossana Pinho Ribeiro</li><li>Assistant director: Maria Luísa</li><li>Video: José Pedro Lopes and Rossana Pinho Ribeiro</li><li>Set design and props: Rossana Pinho Ribeiro</li><li>Original music and sound design: Catarina Estácio</li><li>Photography: Giselle Cupolillo</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-016-019.jpg&quot;, &quot;img/pt-017-020.jpg&quot;, &quot;img/pt-017-021.jpg&quot;]" data-title="Carta de (DES)motivação" aria-label="Open images: Carta de (DES)motivação"><img src="img/pt-016-019.jpg" alt="Carta de (DES)motivação" loading="lazy" decoding="async"><span class="count">3 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="radical-tenderness">
+  <header class="whead">
+    <p class="kicker"><span>2022</span><span>Community art · residency, workshop, video, installation</span></p>
+    <h2>Radical Tenderness</h2>
+    <p class="where">Novo Naselje, Novi Sad, Serbia</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>This project was initiated during the community art residency Magic Carpets, where I was invited by Novo Kulturno Naselje to work in their neighbourhood. There I decided to work with elderly ladies, as I noticed this specific group of people was not present in the lively public space of the surroundings.</p><p>Through meetings with two groups of local women I came to understand that, even now that they are tired and need help themselves, one of the main things that keeps them happy and busy at this stage of their life is taking care of their plants and flowers, and in rare cases, their pets and grandchildren.</p><p>I proposed a workshop in which the ladies would teach young adults to move a small plant to a bigger pot so it could grow better, along with some basic care for the plant. During the workshop we recorded the actions to produce a video art piece called <em>The Caretakers</em>.</p><p>I decided to build a community garden to encourage their presence in the public space near their homes. At the same time, this public infrastructure would also support activities with children from the surrounding schools.</p>
+      <ul class="meta"><li>Wood, soil, various plants</li><li>6.3 × 3 × 1.2 m</li><li>September 2022</li></ul><a class="vid" href="https://tinyurl.com/The-Caretakers" target="_blank" rel="noopener">Watch The Caretakers ↗</a>
+      <ul class="credits"><li>Rossana Pinho Ribeiro</li><li>Curator: Sara Dedić</li><li>Artistic residency: Magic Carpets, funded by Creative Europe</li><li>Support: Novo Kulturno Naselje</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/018-036.jpg&quot;, &quot;img/019-037.jpg&quot;, &quot;img/019-038.jpg&quot;, &quot;img/019-039.jpg&quot;, &quot;img/019-040.jpg&quot;, &quot;img/019-041.jpg&quot;, &quot;img/019-042.jpg&quot;, &quot;img/020-043.jpg&quot;, &quot;img/020-044.jpg&quot;, &quot;img/020-045.jpg&quot;, &quot;img/020-046.jpg&quot;]" data-title="Radical Tenderness" aria-label="Open images: Radical Tenderness"><img src="img/018-036.jpg" alt="Radical Tenderness" loading="lazy" decoding="async"><span class="count">11 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="the-impossible-cities">
+  <header class="whead">
+    <p class="kicker"><span>2021</span><span>Performative actions · video installation</span></p>
+    <h2>The Impossible Cities</h2>
+    <p class="where">Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>This project seeks to rethink places undergoing transformation in the city of Porto, while portraying and questioning the urban policies that drive these transformations, which in these cases privilege commercial logics over environmental sustainability.</p><p>Through performative actions in public spaces based on the act of walking, the project addresses the city under construction as a stage and proposes, as a performative formula, a fictionalized everyday life, turning ordinary actions into rituals of banality. Simple acts like walking, shopping, planting a field, or playing a ball game become unexpected visions through the use of accessories that are unusual and foreign to that setting.</p><p>Through this exercise, the work questions notions of civic responsibility and the relationships we establish with each other and with common spaces, as well as the (im)possible, (un)desired ways of building the city.</p><p>Inspired by Italo Calvino’s <em>Invisible Cities</em>, the resulting video installation narrates the reality of an alternative Porto. A fictional city is not such because it is unreal, but because it denies its existence. The Impossible Cities are only so because they have not been walked.</p>
+      <ul class="meta"><li>Video loop, 42 minutes</li></ul><a class="vid" href="https://tinyurl.com/AS-CIDADES-IMPOSSIVEIS" target="_blank" rel="noopener">Watch the video ↗</a>
+      <ul class="credits"><li>Design and artistic direction: Rossana Pinho Ribeiro</li><li>Participants: Amanda Brasil Cavalcante, Filipe Tootill, João Gabriel Michetti Ferreira, João Pedro Monteiro, Leonardo Vicentin, Letícia Moro, Maria Eugénia Cavaggioni, Zane Ester Gruntman</li><li>Image recording: João Gonçalves Fernandes, Fátima Pinheiro, Rossana Pinho Ribeiro</li><li>Video editing: Rossana Pinho Ribeiro</li><li>Narration: João Delgado Lourenço</li><li>Text: Rossana Ribeiro, based on Invisible Cities by Italo Calvino, in collaboration with João Gonçalves Fernandes</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/021-047.jpg&quot;, &quot;img/022-048.jpg&quot;, &quot;img/022-049.jpg&quot;, &quot;img/022-050.jpg&quot;, &quot;img/022-051.jpg&quot;, &quot;img/022-052.jpg&quot;, &quot;img/022-053.jpg&quot;, &quot;img/022-054.jpg&quot;, &quot;img/022-055.jpg&quot;, &quot;img/022-056.jpg&quot;, &quot;img/023-057.jpg&quot;, &quot;img/023-058.jpg&quot;, &quot;img/023-059.jpg&quot;, &quot;img/023-060.jpg&quot;, &quot;img/023-061.jpg&quot;, &quot;img/023-062.jpg&quot;, &quot;img/023-063.jpg&quot;, &quot;img/023-064.jpg&quot;, &quot;img/023-065.jpg&quot;, &quot;img/024-066.jpg&quot;, &quot;img/024-067.jpg&quot;, &quot;img/024-068.jpg&quot;, &quot;img/024-069.jpg&quot;, &quot;img/024-070.jpg&quot;, &quot;img/024-071.jpg&quot;, &quot;img/024-072.jpg&quot;, &quot;img/024-073.jpg&quot;, &quot;img/024-074.jpg&quot;]" data-title="The Impossible Cities" aria-label="Open images: The Impossible Cities"><img src="img/021-047.jpg" alt="The Impossible Cities" loading="lazy" decoding="async"><span class="count">28 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="a-valvula">
+  <header class="whead">
+    <p class="kicker"><span>2021</span><span>Theatre · scenography, costumes</span></p>
+    <h2>A Válvula</h2><p class="en">The Valve</p>
+    <p class="where">Teatro Helena Sá e Costa, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p><em>A Válvula</em> starts from the endless labour of Sisyphus and ties the myth to our contemporary condition. We live caught in a loop, always looking for valves that let us release the pressure. And then we begin again.</p><p>The project transposes the Myth of Sisyphus to our time, setting it in a gym and turning the motto of physical exercise into a metaphor for the world of work, for a “perfect” or socially desirable lifestyle. It dwells on the apparent lack of meaning in modern life and the search for it, or, at the limit, the refusal of that search, whether through a nihilist ideal or a plain loss of hope in any better way of being.</p><p>At its core are the consequences of the weight of routine and of boundless, seemingly useless effort: the weight of repetition, of competition, of useful time spent producing goods that are often superfluous. All of this set against the near-impossibility of surviving on work we enjoy, in ways of working that do not demand one burnout after another.</p><p>The dramaturgy focuses on the escape valves we use to keep pushing our rock. From there we researched the release valves we rely on to bear routine, from the most harmless (shopping, sport, religion, nights out) to the most dangerous and condemned (deviant, self-destructive, criminal behaviour).</p>
+      <ul class="meta"><li>Duration: 85′</li></ul>
+      <ul class="credits"><li>Creation, direction and dramaturgy: João Delgado Lourenço</li><li>Performers: Diogo Martins, Mafalda Canhola</li><li>Set design: Rossana Pinho Ribeiro</li><li>Original music and sound design: João Monteiro, Leandro Leitão</li><li>Lighting design: OUTCube</li><li>Costumes: João Delgado Lourenço and Rossana Pinho Ribeiro</li><li>Production: José Pedro Lopes</li><li>Photography and video: Gisele Cupolillo, José Pedro Lopes</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-020-026.jpg&quot;, &quot;img/pt-021-027.jpg&quot;, &quot;img/pt-021-028.jpg&quot;, &quot;img/pt-021-029.jpg&quot;, &quot;img/pt-022-030.jpg&quot;, &quot;img/pt-022-031.jpg&quot;, &quot;img/pt-022-032.jpg&quot;, &quot;img/pt-022-033.jpg&quot;]" data-title="A Válvula" aria-label="Open images: A Válvula"><img src="img/pt-020-026.jpg" alt="A Válvula" loading="lazy" decoding="async"><span class="count">8 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="memorial">
+  <header class="whead">
+    <p class="kicker"><span>2020</span><span>Scenography-installation</span></p>
+    <h2>Memorial</h2>
+    <p class="where">ESMAE and Cordoaria Garden, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p><em>Memorial (for a non-play)</em> is a scenography project for an academic theatre production that refused to be one.</p><p>With the Covid-19 preventive measures (schools and theatres closed, students back in their home towns), the class was forced to make an online “theatre” project, presented on Zoom.</p><p>The project became an anti-online-theatre Manifesto. While helping the group write it, I designed and built a structure symbolising its twelve members, drawing on the materiality of the screen: its transparency, its reflections of light and mirror. With a budget for only six of the twelve planned structures, the idea was to stand them on a mirroring floor that would double them. In this way the opposing notions of real and virtual are woven into the visual proposal.</p><p>At the end of the academic year, ESMAE was able to reopen its doors to a few small student presentations and experiments. For three days I tested the structure in a black box with a colleague, Luísa L’Abbate, who designed the light. The lighting set out to create colour, from the image of the rainbow, and to use the reflective qualities of the materials to make the light ricochet.</p><p>The structure took on endless colours, and the plastic films appeared as an aqueous liquid, somewhere between watercolour and industrial metallic paint. Each framed film overlays two images at once: the outside seen through it, and the one the mirror sends back.</p><p>The physical closeness between audience and structure, unusual in classic stage-and-auditorium theatre, is essential: it is at this short distance that the strongest visual effects appear.</p>
+      
+      <ul class="credits"><li>Creation and construction: Rossana Pinho Ribeiro</li><li>Light: Luísa L’Abbate</li><li>Photography: Rossana Pinho Ribeiro</li><li>Theatre production of the Master’s in Performing Arts, ESMAE, Porto, during the Covid-19 pandemic</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-023-034.jpg&quot;, &quot;img/pt-023-035.jpg&quot;, &quot;img/pt-024-036.jpg&quot;, &quot;img/pt-024-037.jpg&quot;, &quot;img/pt-024-038.jpg&quot;, &quot;img/pt-025-039.jpg&quot;, &quot;img/pt-025-040.jpg&quot;, &quot;img/pt-026-041.jpg&quot;, &quot;img/pt-026-042.jpg&quot;, &quot;img/pt-027-043.jpg&quot;, &quot;img/pt-027-044.jpg&quot;, &quot;img/pt-028-045.jpg&quot;, &quot;img/pt-028-046.jpg&quot;, &quot;img/pt-028-047.jpg&quot;, &quot;img/pt-028-048.jpg&quot;, &quot;img/pt-028-049.jpg&quot;]" data-title="Memorial" aria-label="Open images: Memorial"><img src="img/pt-023-034.jpg" alt="Memorial" loading="lazy" decoding="async"><span class="count">16 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="spectrum">
+  <header class="whead">
+    <p class="kicker"><span>2020</span><span>Interactive installation · scenographic device</span></p>
+    <h2>Spectrum</h2><p class="en">Espectro</p>
+    <p class="where">ESMAE, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p><em>Spectrum</em> is at once an interactive installation and a scenographic device that can be activated by performers or by the audience. It is also a light machine.</p><p>It was conceived for Luigi Pirandello’s unfinished play <em>The Mountain Giants</em>, for its second act, imagined in a non-conventional space. I designed an object that could adapt easily to any place, indoors or out, but that would live above all in the dark of night.</p><p>Pirandello’s text is full of references to a spiritual universe, half haunting, half phantasmagorical. It speaks of another world, of the invisible, of dreams, of a fabulous air, of the deafness of shadow, of spirits, ghosts, evanescences and flakes of coloured cloud that dissolve. I tried to carry this mystical, mysterious atmosphere into the piece, with plays of coloured light that move, appear and vanish like fleeting souls.</p><p>The form of this object-space follows the idea of a ghost: something you can pass through, that almost liquefies, that stays hidden in the dark but makes itself felt when provoked by light, by movement, by its own sound, a tinkling that comes with the wind or with any body that touches it.</p><p>It brings in an aged wooden floor and the shutters that guard a window of the mansion described in the play, and also the idea of “snow” at the top of the mountain. It could be a wind chime (in Portuguese, an <em>espanta-espíritos</em>, a spirit-scarer) at the scale of the human body. Sisal cords tied to small luminous antennae let the lanterns turn around the central axis and be switched on and off, creating many plays of light and colour.</p><p>The undulating cut-out at the back carries a natural landscape, a mountainous horizon line. Echoing the paradoxes and contrasts of the play, the piece combines two base materials: wood and aluminium, one warm and one cold, one that absorbs and one that reflects. Both are recycled, tied directly to ageing and decay.</p>
+      
+      <ul class="credits"><li>Creation and construction: Rossana Pinho Ribeiro</li><li>Photography: Rossana Pinho Ribeiro</li><li>Artistic research, Master’s in Performing Arts, ESMAE, Porto</li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/pt-029-050.jpg&quot;, &quot;img/pt-030-051.jpg&quot;, &quot;img/pt-030-052.jpg&quot;]" data-title="Spectrum" aria-label="Open images: Spectrum"><img src="img/pt-029-050.jpg" alt="Spectrum" loading="lazy" decoding="async"><span class="count">3 images</span></button></div>
+  </div>
+  
+</section>
+<section class="work" id="a-study-on-resilience">
+  <header class="whead">
+    <p class="kicker"><span>2019</span><span>Installation in two moments</span></p>
+    <h2>A Study on Resilience</h2>
+    <p class="where">Atelier amontramostra, Porto, Portugal</p>
+  </header>
+  <div class="wbody">
+    <div class="txt">
+      <p>An installation in two moments.</p><p><em>A Study on Resilience: wound</em> is a canvas placed over the window of a storefront, stretched at six points by steel cables hung from the interior walls of the space. It stayed in this frontier place of the building, between inside and outside, for about five months.</p><p><em>A Study on Resilience: scar</em> is the same canvas after being freed from the clamps that forced it. The marks remain at the anchor points, which for some time keep adapting to a new shape. The canvas then moves into the interior space, where it remains, flexible and levitating, yet still an element that divides.</p>
+      <ul class="meta"><li>Canvas, steel cables, clamps</li></ul>
+      <ul class="credits"><li>Rossana Pinho Ribeiro</li><li><span>Photography: <a href="https://pedrocavacoleitao.com/" target="_blank" rel="noopener">Pedro Cavaco Leitão</a> and Rossana Pinho Ribeiro</span></li></ul>
+    </div>
+    <div class="imgs"><button class="ph" data-set="[&quot;img/res-01.jpg&quot;, &quot;img/res-02.jpg&quot;, &quot;img/res-03.jpg&quot;, &quot;img/res-04.jpg&quot;, &quot;img/res-05.jpg&quot;, &quot;img/res-06.jpg&quot;, &quot;img/res-07.jpg&quot;, &quot;img/res-08.jpg&quot;, &quot;img/res-09.jpg&quot;, &quot;img/res-10.jpg&quot;]" data-title="A Study on Resilience" aria-label="Open images: A Study on Resilience"><img src="img/res-01.jpg" alt="A Study on Resilience" loading="lazy" decoding="async"><span class="count">10 images</span></button></div>
+  </div>
+  
+</section>
+
+<section class="about" id="about">
+  <div><img src="img/027-075.jpg" alt="Rossana Pinho Ribeiro crouching on a forest floor, cutting into the ground with a knife" loading="lazy"></div>
+  <div class="bio">
+    <h2>About</h2>
+    <p>Rossana Pinho Ribeiro (Porto, 1987) is a visual artist, scenographer, architect and art educator.</p>
+    <p>With a background in Architecture (FAUP) and a Master’s degree in Scenography (ESMAE), she is currently pursuing a Master’s in Visual Arts Education (FPCEUP), aiming to expand her pedagogical practice.</p>
+    <p>Her practice unfolds across architecture, scenography, installation, and performance, exploring the dynamic relationship between body, object, and space. Through collaborative and site-responsive processes, she engages with the material, social, and environmental conditions of each context, reflecting on how we inhabit and negotiate shared spaces. Her work consistently reveals an interest in ecology, perception, sensation, and the potential of space to become a sensitive and participatory environment.</p>
+    <p>Her scenography master’s project, <em>The Impossible Cities: scenography and/in public space. Spatialities of the common between reality and fiction</em>, drew on Italo Calvino’s <em>Invisible Cities</em> to reimagine the city as a stage. Staged gestures of fictional daily life (walking, planting, playing) became poetic rituals of strangeness, proposing new, (im)possible, (un)desirable ways of inhabiting the city.</p>
+    <p>In 2022 she took part in the European programme Magic Carpets, developing the community art project <em>Radical Tenderness</em> in Novi Sad, Serbia, with two groups of elderly women. In 2024 she was selected for the Coruche Visual Arts Biennial with <em>Textures of the Transparency</em>, continuing her exploration of light, water, transparency and materiality.</p>
+    <p>Between 2014 and 2016 she collaborated with the collective Moradavaga, dedicated to interactive art and ephemeral architecture. She co-founded <a href="https://suspeito.github.io" target="_blank" rel="noopener">Colectivo Suspeito</a> (2016), working with artists and institutions such as mala voadora, Lisboa Soa and Ballet Contemporâneo do Norte. Since 2023 she has also worked as a duo with Zaida Guerrero Casado, creating installations that address ecology: transforming environments to reveal their hidden political and philosophical structures while encouraging public participation and agency.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <span>© Rossana Pinho Ribeiro</span>
+  <a href="https://suspeito.github.io" target="_blank" rel="noopener">Colectivo Suspeito ↗</a>
+</footer>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image viewer">
+  <p class="cap"><b id="lbt"></b><span id="lbc"></span></p>
+  <img id="lbimg" alt="">
+  <button class="x" id="lbx">Close ×</button>
+  <button class="pv" id="lbp" aria-label="Previous image">←</button>
+  <button class="nx" id="lbn" aria-label="Next image">→</button>
+</div>
+
+<script>
+(()=>{
+  const lb=document.getElementById('lb'),im=document.getElementById('lbimg'),tt=document.getElementById('lbt'),cc=document.getElementById('lbc');
+  const pv=document.getElementById('lbp'),nx=document.getElementById('lbn');
+  let set=[],i=0,title='',last=null;
+  const show=k=>{i=(k+set.length)%set.length;im.src=set[i];im.alt=title+', image '+(i+1);cc.textContent=set.length>1?(i+1)+' / '+set.length:'';
+    const pre=new Image();pre.src=set[(i+1)%set.length];};
+  document.querySelectorAll('.ph').forEach(b=>b.addEventListener('click',()=>{
+    try{set=JSON.parse(b.dataset.set)}catch(e){set=[b.querySelector('img').src]}
+    title=b.dataset.title||'';tt.textContent=title;last=b;pv.hidden=nx.hidden=set.length<2;show(0);lb.hidden=false;document.body.style.overflow='hidden';document.getElementById('lbx').focus();}));
+  const close=()=>{lb.hidden=true;im.removeAttribute('src');document.body.style.overflow='';last&&last.focus();};
+  document.getElementById('lbx').onclick=close;
+  pv.onclick=e=>{e.stopPropagation();show(i-1)};
+  nx.onclick=e=>{e.stopPropagation();show(i+1)};
+  im.addEventListener('click',e=>{e.stopPropagation();if(set.length>1)show(i+1)});
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  let sx=null;lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40&&set.length>1)show(d<0?i+1:i-1);sx=null});
+  document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1);});
+})();
+</script>
+
+</body>
+</html>
